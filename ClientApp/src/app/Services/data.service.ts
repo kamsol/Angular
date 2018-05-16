@@ -43,7 +43,6 @@ export class DataService {
 
   addEmployee(employee) {
     this.http.post(this.baseurl + 'api/Employee', employee).subscribe(response => {
-      console.log(response)
       this.subject.next(response)
       this.listLength++;
     }, error => {
