@@ -13,14 +13,12 @@ import { Employee } from '../Models/Employee';
 export class AddEmployeeComponent {
   employeeForm: FormGroup;
   titels : string[] = ["Accountant", "Manager", "Programmer","Secratary"]
-  baseUrl: string;
   employee = new Employee;
   snackbarshow: boolean = false;
 
 
-  constructor( private data: DataService, private form: FormBuilder,  @Inject('BASE_URL') base: string) {
+  constructor( private data: DataService, private form: FormBuilder) {
     this.createForm();
-    this.baseUrl = base;
   }
 
   ngOnInit() {
