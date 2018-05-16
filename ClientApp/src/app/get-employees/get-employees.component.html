@@ -1,0 +1,24 @@
+<h1 class="main-header">Employee list</h1>
+
+<p>Here we show the list of employees which we get from employee controller(api get method)</p>
+
+<p *ngIf="!data.employees | async"><em>Loading...</em></p>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of data.employees | async">
+      <td>{{ employee.employeeID }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.title }}</td>
+      <td>{{ employee.salary | currency}}</td>
+    </tr>
+  </tbody>
+</table>

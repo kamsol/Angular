@@ -1,0 +1,17 @@
+div {
+  padding:50px;
+  background-color:lavender;
+}
+header {
+  text-align: center;
+  font-family: font-family, 'Orienta', sans-serif;
+  font-size: 32px;
+  text-decoration:underline;
+  background: #000000;
+  color:#ffc;
+  margin-bottom:50px
+}
+h3 {  
+  font-family: roboto,Arial,"Helvetica";
+}
+
