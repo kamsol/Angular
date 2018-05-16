@@ -30,27 +30,26 @@ export class DataService {
       this.listLength = response.length;
     }, error => {
       console.log("Unable to get employees");
-      });
+    });
   }
 
 
 
   getListLength() {
-     return this.listLength;
+    return this.listLength;
   }
 
 
 
-  async addEmployee(employee) {
-    try {
-      var response = await this.http.post(this.baseurl + 'api/Employee', employee).toPromise();
-      this.list.push(response);
-      this.subject.next(this.list);
+  addEmployee(employee) {
+    this.http.post(this.baseurl + 'api/Employee', employee).subscribe(response => {
+      console.log(response)
+      this.subject.next(response)
       this.listLength++;
-    } catch (error) {
+    }, error => {
       console.log("Unable to post employee")
-    }
-  }
+    });
   
 }
 
+}
