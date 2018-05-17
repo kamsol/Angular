@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { DataService } from '../Services/data.service';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Employee } from '../Models/Employee';
 
 
