@@ -10,8 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './Services/data.service';
 import { GetEmployeesComponent } from './get-employees/get-employees.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { TrimValueAccessorModule } from 'ng-trim-value-accessor';
-
 
 
 @NgModule({
@@ -28,7 +26,6 @@ import { TrimValueAccessorModule } from 'ng-trim-value-accessor';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    TrimValueAccessorModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'get-employees', component: GetEmployeesComponent },

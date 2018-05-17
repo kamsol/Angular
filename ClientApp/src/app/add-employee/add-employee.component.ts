@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { DataService } from '../Services/data.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Employee } from '../Models/Employee';
 
 
@@ -32,15 +32,24 @@ export class AddEmployeeComponent {
 
   createForm() {
     this.employeeForm = this.form.group({
-      name: ['', [Validators.required, Validators.minLength(6)]],
+      name: ['', [Validators.required, Validators.minLength(6), this.whiteSpaceValidator]],
       title: ['', Validators.required]
     })
+  }
+
+  whiteSpaceValidator(control: FormControl): { [str: string]: boolean } {
+
+    if (control.value && control.value.trim().length < 6 )
+      return { whiteSpace: true }
+
+    return null;
+
   }
 
 
   onSubmit(value) {
     this.employee.employeeid = this.getLength();
-    this.employee.name = value.name;
+    this.employee.name = value.name
     this.employee.title = value.title;
     this.data.addEmployee(this.employee);
     this.employeeForm.reset();

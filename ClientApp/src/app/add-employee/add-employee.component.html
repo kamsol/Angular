@@ -8,7 +8,7 @@
              class="form-control"
              id="name"
              formControlName="name"
-             ng-trim>
+             >
       <div class="text-danger" *ngIf="employeeForm.controls['name'].invalid && (employeeForm.controls['name'].touched || employeeForm.controls['name'].dirty)">
         Name length must be at least 6 characters
       </div>
@@ -26,7 +26,7 @@
     <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Submit</button>
 
   </form>
-  <div *ngIf="snackbarshow" class="confirm-adding"  >
+  <div *ngIf="snackbarshow" class="confirm-adding">
     New eployee added!
   </div>
 </div>
