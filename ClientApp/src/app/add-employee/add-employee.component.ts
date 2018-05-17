@@ -22,6 +22,7 @@ export class AddEmployeeComponent {
   }
 
   ngOnInit() {
+    this.data.getEmployee();
     this.data.getListLength();
   }
 
