@@ -37,7 +37,7 @@ export class AddEmployeeComponent {
     })
   }
 
-  whiteSpaceValidator(control: FormControl): { [str: string]: boolean } {
+  whiteSpaceValidator(control: FormControl) {
 
     if (control.value && control.value.trim().length < 6 )
       return { whiteSpace: true }
