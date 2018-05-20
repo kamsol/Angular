@@ -13,7 +13,7 @@ import { Employee } from '../Models/Employee';
 export class AddEmployeeComponent {
   employeeForm: FormGroup;
   titels : string[] = ["Accountant", "Manager", "Programmer","Secratary"]
-  employee = new Employee;
+  employee = new Employee();
   snackbarshow: boolean = false;
 
 
@@ -47,14 +47,13 @@ export class AddEmployeeComponent {
   }
 
 
-  onSubmit(value) {
+  onSubmit() {
     this.employee.employeeid = this.getLength();
-    this.employee.name = value.name
-    this.employee.title = value.title;
     this.data.addEmployee(this.employee);
     this.employeeForm.reset();
     this.snackbarshow = true;
-    setTimeout(() => { this.snackbarshow = false;}, 3000);
+    setTimeout(() => { this.snackbarshow = false; }, 3000);
+    console.log(this.employee.name)
   }
 
 }

@@ -1,13 +1,14 @@
 <h1 class="main-header">Add employee</h1>
 <p>Here you can add new employee (Write to data source)</p>
 <div class="add-employee-wrap">
-  <form class="add-employee-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm.value)">
+  <form class="add-employee-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text"
              class="form-control"
              id="name"
              formControlName="name"
+             [(ngModel)]="employee.name"
              >
       <div class="text-danger" *ngIf="employeeForm.controls['name'].invalid && (employeeForm.controls['name'].touched || employeeForm.controls['name'].dirty)">
         Name length must be at least 6 characters
@@ -15,7 +16,7 @@
     </div>
     <div class="form-group">
       <label for="title">Chose Title</label>
-      <select class="form-control" formControlName="title" id="title">
+      <select class="form-control" formControlName="title" id="title" [(ngModel)]="employee.title">
         <option value="">Select title</option>
         <option *ngFor="let title of titels" [ngValue]="title">
           {{title }}
