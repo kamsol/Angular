@@ -53,7 +53,6 @@ export class AddEmployeeComponent {
     this.employeeForm.reset();
     this.snackbarshow = true;
     setTimeout(() => { this.snackbarshow = false; }, 3000);
-    console.log(this.employee.name)
   }
 
 }
